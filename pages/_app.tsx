@@ -7,13 +7,13 @@ import ThirdwebGuideFooter from "../components/ThirdwebGuideFooter";
 import { MagicConnector } from "@thirdweb-dev/react/evm/connectors/magic";
 
 // This is the chainId your dApp will work on.
-const activeChainId = ChainId.Mumbai;
+const activeChainId = ChainId.Goerli;
 
 const magicLinkConnector = new MagicConnector({
   options: {
-    apiKey: process.env.NEXT_PUBLIC_MAGIC_LINK_API_KEY as string,
+    apiKey: "pk_live_7FBA950F2ED93105",
     rpcUrls: {
-      [ChainId.Mumbai]: "https://mumbai.magic.io/rpc",
+      [ChainId.Goerli]: "https://goerli.magic.io/rpc",
     },
   },
 });
@@ -26,9 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThirdwebProvider
       desiredChainId={activeChainId}
       walletConnectors={connectors}
-      chainRpc={{
-        [ChainId.Mumbai]: "https://rpc-mumbai.maticvigil.com",
-      }}
     >
       <Head>
         <title>thirdweb Magic.Link Wallet Connector</title>
