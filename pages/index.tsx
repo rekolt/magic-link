@@ -3,6 +3,14 @@ import { useAddress, useContract, useDisconnect } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { useState } from "react";
 import { useMagic } from "@thirdweb-dev/react/evm/connectors/magic";
+import { EthNetworkConfiguration, Magic } from "magic-sdk";
+import { ethers } from "ethers";
+
+const magic = new Magic("pk_live_7FBA950F2ED93105", {
+  network: "goerli" as EthNetworkConfiguration,
+});
+const provider = new ethers.providers.Web3Provider(magic.rpcProvider);
+const signer = provider.getSigner();
 
 const Home: NextPage = () => {
   const address = useAddress(); // Hook to grab the currently connected user's address.
@@ -15,7 +23,12 @@ const Home: NextPage = () => {
   const [email, setEmail] = useState<string>(""); // State to hold the email address the user entered.
 
   async function onSubmit() {
-    connectWithMagic({ email });
+    if (!address) {
+      connectWithMagic({ email });
+    }
+    const magicAddress = await signer.getAddress();
+    console.log("magicAddresss", magicAddress);
+    console.log("thirdwebAddress", address);
 
     if (contract) {
       const tx = await contract.buyoutListing(25, 1);

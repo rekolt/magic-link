@@ -767,6 +767,20 @@
   resolved "https://registry.yarnpkg.com/@magic-sdk/commons/-/commons-4.1.1.tgz#16dc84a64cc7cafae50c4061acae46bb587c623d"
   integrity sha512-nHbMRkssAC1z5rHpPwkiYolp3qxmtnkNaynGlreVxgtPTemJ8USRrXjg/cF0WVhRwtPTpegdTvtpJWOMd0Ratg==
 
+"@magic-sdk/commons@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@magic-sdk/commons/-/commons-7.0.0.tgz#ef8b61a76a998866d01be9c0f91bad54d7811a71"
+  integrity sha512-ioLMvCYrBeoV0yz2OXBrdqZ/IDz1lLQa6twDSJQvdY77WnbXJvIYMnLXGjL0HkMblSc1t/mNPby+pCaTSnh5mw==
+
+"@magic-sdk/provider@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@magic-sdk/provider/-/provider-11.0.0.tgz#53cbd3d57cc4b4d5a62a151334c7134d25dd355f"
+  integrity sha512-QQiR3fKJTTe6pqQ1ItjA8TlAZo5/28GpHV9yQGOjal+xAruh874C+e1oq1dA/B/d2kPzG+mVttuJszfgKxfZmQ==
+  dependencies:
+    "@magic-sdk/types" "^10.0.0"
+    eventemitter3 "^4.0.4"
+    web3-core "1.5.2"
+
 "@magic-sdk/provider@^8.1.1":
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/@magic-sdk/provider/-/provider-8.2.0.tgz#50dd08ca79223f41a5f9bad5a26d0e716f20dbcf"
@@ -775,6 +789,11 @@
     "@magic-sdk/types" "^7.1.1"
     eventemitter3 "^4.0.4"
     web3-core "1.5.2"
+
+"@magic-sdk/types@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@magic-sdk/types/-/types-10.0.0.tgz#e8132fd67849cc7bb2f95569e04f44152e893b7f"
+  integrity sha512-v8vLY1F5YG3LS6V2b3QOpP2MQR4oen0/TTqmrGnBo6UN0odmBglOc0QV4qQOwgdfaJaPCClh9nWHxjRedLFjig==
 
 "@magic-sdk/types@^7.1.1":
   version "7.2.0"
@@ -4303,6 +4322,16 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+magic-sdk@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/magic-sdk/-/magic-sdk-11.0.0.tgz#1967d5eb3993e5c00b9eb0669161d85ee0187180"
+  integrity sha512-JxqQMuAqrqR95AN7yRSNxFV4o9Ql/hRTRqppdGQA+UqtfbncnUteB6rgQj6NQkr8qrWt/y4r3dgwxISY2wjs7A==
+  dependencies:
+    "@magic-sdk/commons" "^7.0.0"
+    "@magic-sdk/provider" "^11.0.0"
+    "@magic-sdk/types" "^10.0.0"
+    localforage "^1.7.4"
 
 magic-sdk@^8.1.1:
   version "8.1.1"
